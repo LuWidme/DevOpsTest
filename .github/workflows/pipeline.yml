@@ -21,7 +21,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Build and Test with Gradle
-        run: gradle clean build -x test
+        run: gradle clean build
 ### ⬇ IMPORTANT PART ⬇ ###
   build:
     runs-on: ubuntu-latest
