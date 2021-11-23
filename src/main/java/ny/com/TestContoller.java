@@ -15,7 +15,7 @@ class TestContoller {
 
     @GetMapping("/")
     public ResponseEntity<String> HomeTest() {
-        return ResponseEntity.ok().body("Docker is Easy! :D");
+        return ResponseEntity.ok().body("GUGUS");
     }
 }
 
