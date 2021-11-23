@@ -11,7 +11,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env: 
+      secrets:  test11231231
     steps:
 #     - uses: actions/checkout@v2
 #     - name: Build the Docker image
@@ -23,6 +24,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "test11231231" #Must be unique in Heroku
+          heroku_app_name: "test11231232" #Must be unique in Heroku
           heroku_email: "luca.widmer@noseryoung.ch"
           usedocker: true
