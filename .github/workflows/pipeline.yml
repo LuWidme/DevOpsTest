@@ -12,6 +12,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      PORT: 8000
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,6 +23,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Build and Test with Gradle
+      
         run: gradle clean build
 ### ⬇ IMPORTANT PART ⬇ ###
   build:
