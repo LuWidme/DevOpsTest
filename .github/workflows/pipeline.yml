@@ -20,9 +20,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Build with Gradle
-        run: ./gradlew build
-      - name: Test with Gradle
+      - name: Build and Test with Gradle
         run: gradle clean build -x test
 ### ⬇ IMPORTANT PART ⬇ ###
   build:
