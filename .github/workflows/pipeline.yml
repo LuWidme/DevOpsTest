@@ -10,6 +10,12 @@ on:
 
 # Your workflows jobs.
 jobs:
+  say-hello:
+    runs-on: alpine-latest
+    steps:
+      - name: Greet
+        run: echo "Hello"
+
   test:
     runs-on: ubuntu-latest
     env:
