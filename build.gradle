@@ -3,6 +3,9 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
+plugins {
+	id "org.sonarqube" version "3.4.0.2513"
+}
 
 group = 'ny'
 version = '0.0.1-SNAPSHOT'
@@ -21,4 +24,11 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+
+sonarqube {
+	properties {
+		property "sonar.projectKey", "uk223"
+	}
 }
