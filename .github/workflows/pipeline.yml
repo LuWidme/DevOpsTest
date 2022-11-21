@@ -25,7 +25,6 @@ jobs:
           echo $SONAR_HOST_URL
 
   remote-say-hello:
-  - name: executing remote ssh commands using password
     uses: appleboy/ssh-action@master
     with:
       host: ${{ secrets.REMOTE_HOST }}
