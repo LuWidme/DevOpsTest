@@ -1,12 +1,11 @@
 
 
 # Your workflow name.
-name: Deploy to heroku.
+name: Pipeline 1
 
 # Run workflow on every push to master branch.
 on:
-  push:
-    branches: [main]
+  push
 
 # Your workflows jobs.
 jobs:
@@ -15,15 +14,15 @@ jobs:
     steps:
       - name: Greet
         run: echo "Hello"
+
   say-mySecret:
     runs-on: ubuntu-latest
     steps:
-      env:
-        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-
-      run:
-        echo $SONAR_HOST_URL
-
+      - name: print my secret
+        env:
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        run:
+          echo $SONAR_HOST_URL
 
   test:
     runs-on: ubuntu-latest
