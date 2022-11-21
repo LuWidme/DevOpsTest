@@ -18,8 +18,7 @@ jobs:
       - name: print my secret
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: echo $SONAR_HOST_URL
-
+        run: whoami
   remote-say-hello:
     name: remote-say-hello
     runs-on: ubuntu-latest
