@@ -18,7 +18,7 @@ jobs:
       - name: print my secret
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: whoami
+        run: echo "Hello World"
   remote-say-hello:
     name: remote-say-hello
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USERNAME }}
           key: ${{ secrets.REMOTE_KEY }}
-          script: whoami
+          script: echo "Hello World"
 
   test:
     runs-on: ubuntu-latest
