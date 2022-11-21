@@ -10,7 +10,7 @@ plugins {
 
 group = 'ny'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+
 
 repositories {
 	mavenCentral()
@@ -38,8 +38,6 @@ sonarqube {
 		property "sonar.login", "sqp_30b4cc05ad96313140f6dca7cd51c82e764619d8"
 		property "sonar.host.url", "https://sonarqube.noseryoung.ch"
 		property "sonar.qualitygate.wait", true
-
-
 	}
 }
 project.tasks["sonarqube"].dependsOn "jacocoTestReport"
