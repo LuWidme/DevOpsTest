@@ -32,7 +32,7 @@ jobs:
           script_stop: true
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USERNAME }}
-          password: ${{ secrets.REMOTE_PASSWORD }}
+          key: ${{ secrets.REMOTE_KEY }}
           script: whoami
 
   test:
