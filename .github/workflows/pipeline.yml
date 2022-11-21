@@ -30,7 +30,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USERNAME }}
           password: ${{ secrets.REMOTE_PASSWORD }}
-          script: echo "Hello World"
+          script: whoami
 
   test:
     runs-on: ubuntu-latest
