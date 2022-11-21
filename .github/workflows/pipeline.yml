@@ -31,7 +31,7 @@ jobs:
           script_stop: true
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USERNAME }}
-          key: ${{ secrets.REMOTE_KEY }}
+          password: ${{ secrets.REMOTE_PASSWORD }}
           script: echo "Hello World"
 
   test:
