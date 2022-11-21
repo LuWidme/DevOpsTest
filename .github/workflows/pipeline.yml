@@ -1,11 +1,8 @@
-
-
 # Your workflow name.
 name: Pipeline-1
 
 # Run workflow on every push to master branch.
-on:
-  push
+on: push
 
 # Your workflows jobs.
 jobs:
@@ -21,18 +18,20 @@ jobs:
       - name: print my secret
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run:
-          echo $SONAR_HOST_URL
+        run: echo $SONAR_HOST_URL
 
   remote-say-hello:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USERNAME }}
-        password: ${{ secrets.REMOTE_PASSWORD }}
-        port: 22
-        script: echo “Hello World”
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: echo "Hello World"
 
   test:
     runs-on: ubuntu-latest
@@ -47,13 +46,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Build and Test with Gradle
-      
+
         run: gradle clean build
-
-
-
 # name: Docker Image CI
-
 
 # on:
 #   push:
@@ -76,13 +71,13 @@ jobs:
 #     steps:
 #       - name: Check out the repo
 #         uses: actions/checkout@v2
-      
+
 #       - name: Log in to Docker Hub
 #         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
 #         with:
 #           username: ${{ secrets.DOCKER_USERNAME }}
 #           password: ${{ secrets.DOCKER_PASSWORD }}
-      
+
 #       - name: Extract metadata (tags, labels) for Docker
 #         id: meta
 #         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
