@@ -13,13 +13,15 @@ jobs:
         run: echo "Hello"
 
   say-mySecret:
+    needs: say-hello
     runs-on: ubuntu-latest
     steps:
       - name: print my secret
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: echo "Hello World"
+        run: echo SONAR_HOST_URL
   remote-say-hello:
+    needs: say-hello
     name: remote-say-hello
     runs-on: ubuntu-latest
     steps:
@@ -33,6 +35,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: [say-hello,remote-say-hello]
     env:
       PORT: 8000
     steps:
