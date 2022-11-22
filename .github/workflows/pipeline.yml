@@ -11,22 +11,14 @@ jobs:
     steps:
       - name: Greet
         run: echo "Hello"
-
-  say-mySecret:
-    runs-on: ubuntu-latest
-    steps:
       - name: print my secret
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: echo "Hello World"
-  remote-say-hello:
-    name: remote-say-hello
-    runs-on: ubuntu-latest
-    steps:
+
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
-
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USERNAME }}
           password: ${{ secrets.REMOTE_PASSWORD }}
