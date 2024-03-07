@@ -11,4 +11,4 @@ jobs:
     needs: my-first-job
     steps:
       - name: my-step
-        run: echo "BYE"
+        run: echo "BYEBYE"
