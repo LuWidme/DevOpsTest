@@ -28,10 +28,10 @@ jobs:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USERNAME }}
-          password: ${{ secrets.REMOTE_PASSWORD }}
-          script: echo "Hello World"
+          host: ${{ secrets.JUMP_HOST }}
+          username: ${{ secrets.JUMP_USERNAME }}
+          password: ${{ secrets.JUMP_PASSWORD }}
+          script: sshpass -p ${{ secrets.REMOTE_PASSWORD }}  ${{ secrets.REMOTE_USERNAME }}@${{ secrets.REMOTE_HOST }} && echo "Hello World"
 
   test:
     runs-on: ubuntu-latest
