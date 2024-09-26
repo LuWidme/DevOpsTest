@@ -34,7 +34,7 @@ jobs:
           proxy_host: ${{ secrets.PROXY_HOST }}
           proxy_username: ${{ secrets.PROXY_USERNAME }}
           proxy_password: ${{ secrets.PROXY_PASSWORD}}
-          script: echo "Hello World"
+          script: hostname -I
 
   test:
     runs-on: ubuntu-latest
