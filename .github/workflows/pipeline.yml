@@ -43,9 +43,10 @@ jobs:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.JUMP_HOST }}
-          username: ${{ secrets.JUMP_USERNAME }}
-          password: ${{ secrets.JUMP_PASSWORD }}
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USERNAME }}
+          password: ${{ secrets.REMOTE_PASSWORD }}
+          port: '2222'
           script: ./run.sh
 #
 #  build-gradle:
