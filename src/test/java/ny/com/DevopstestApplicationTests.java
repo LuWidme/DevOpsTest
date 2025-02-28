@@ -14,6 +14,6 @@ class DevopstestApplicationTests {
 	@Test
 	public void doTest() {
 		TestContoller testContoller=new TestContoller();
-		Assertions.assertEquals( ResponseEntity.ok().body("Docker is Easy! :D"), testContoller.HomeTest() );
+		Assertions.assertEquals( ResponseEntity.ok().body("DevOps is Easy! :D"), testContoller.HomeTest() );
 	}
 }
