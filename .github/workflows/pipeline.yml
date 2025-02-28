@@ -41,14 +41,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Set up JDK 18
-        uses: actions/setup-java@v2
-        with:
-          java-version: '18'
-          distribution: 'adopt'
-      - name: Build and Test with Gradle
+name: Build
 
-        run: gradle test
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout sources
+      uses: actions/checkout@v4
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: 18
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+    - name: Build with Gradle
+      run: ./gradlew build
 # name: Docker Image CI
 
 # on:
