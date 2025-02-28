@@ -48,7 +48,7 @@ jobs:
           distribution: 'adopt'
       - name: Build and Test with Gradle
 
-        run: gradle clean build
+        run: gradle test
 # name: Docker Image CI
 
 # on:
