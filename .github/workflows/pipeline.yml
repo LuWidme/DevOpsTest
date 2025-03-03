@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.REMOTE_USERNAME }}
           password: ${{ secrets.REMOTE_PASSWORD }}
           port: '2222'
-          script: echo "Success from" && hostname -I
+          script: echo "Hello from" && hostname -I
 
 
   remote-command2:
