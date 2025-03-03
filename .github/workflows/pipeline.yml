@@ -38,7 +38,7 @@ jobs:
 
   remote-command2:
     needs: say-hello
-    name: remote-say-hello
+    name: remote-run-script
     runs-on: ubuntu-latest
     steps:
       - name: executing remote ssh commands using password
